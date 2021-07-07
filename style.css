@@ -16,6 +16,7 @@
     padding: 0;
 }
 
+picture,
 img {
     max-width: 100%;
     height: auto;
@@ -40,6 +41,13 @@ a {
 
 li {
     list-style: none;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--black);
+    margin-top: 2rem;
 }
 /* end reset */
 
@@ -187,12 +195,6 @@ li {
     padding: 2rem 1.5rem;
     margin-top: 3rem;
 }
-.vr-card h2 {
-    text-align: center;
-    font-size: 2rem;
-    color:  var(--black);
-    margin-top: 2rem;
-}
 .vr-card p {
     font-family: 'Alata', sans-serif;
     text-align: center;
@@ -200,4 +202,48 @@ li {
     color: var(--very-dark-dray);
     line-height: 1.5;
     padding: 1.2rem 1rem;
+}
+/* end vr section */
+
+/* gallery section */
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 1.5rem;
+}
+.gallery-all {
+    margin-top: 3rem;
+}
+.card {
+    position: relative;
+    margin-bottom: 1rem; 
+}
+.card::before {
+    position: absolute;
+    content: "";
+    background-image: linear-gradient(to left, #00000000, #01010100, #030302, #040404, #050505);
+    opacity: .1;
+    left: 0;
+    top: 0;
+    bottom: 4px;
+    right: 0;
+    opacity: .4;
+    z-index: -100;
+    cursor: pointer;
+}
+.card:hover:hover {
+    opacity: .4;
+}
+.card h3 {
+    position: absolute;
+    content: '';
+    top: 32%;
+    width: 40%;
+    margin-left: 1rem;
+    text-align: left;
+    color: var(--white);
+    font-size: 1.5rem;
+    z-index: 100;
 }
