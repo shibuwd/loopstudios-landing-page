@@ -28,7 +28,7 @@ body {
     -webkit-font-smoothing: antialiased;
     height: 100vh;
     text-rendering: optimizeSpeed;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,19 +37,55 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     text-decoration: none;
+    
 }
 
 li {
     list-style: none;
 }
+/* end reset */
 
+/* global style */
 h2 {
     text-align: center;
     font-size: 2rem;
     color: var(--black);
     margin-top: 2rem;
 }
-/* end reset */
+p, .btn {
+    font-family: 'Alata', sans-serif;
+}
+
+.effect {
+    position: relative;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 1.4rem;
+    display: inline-block;
+    transition: 0.6s cubic-bezier(0.37, 0, 0.63, 1);
+}
+.effect:hover:before {
+    position: absolute;
+    content: '';
+    height: .18rem;
+    width: 50%;
+    top: 120%;
+    left: 25%;
+    right: 25%;
+    background: var(--white);
+}
+.social-icons .effect {
+    font-size: 1.8rem;
+}
+.social-icons .effect:hover:before {
+    height: .1rem;
+    width: 100%;
+    top: 120%;
+    left: 0%;
+    height: .2rem;
+}
+/* end global style */
 
 /* header section */
 #header {
@@ -103,7 +139,7 @@ h2 {
 #header .nav-list ul.active {
     left: 0%;
 }
-#header .nav-list ul a {
+/* #header .nav-list ul a {
     position: relative;
     font-size: 1.4rem;
     text-transform: uppercase;
@@ -111,8 +147,8 @@ h2 {
     margin: 1rem;
     display: inline-block;
     transition: 0.6s cubic-bezier(0.37, 0, 0.63, 1);
-}
-#header .nav-list ul a:hover:before {
+} */
+/* .effect:hover:before {
     position: absolute;
     content: '';
     height: .1rem;
@@ -121,7 +157,7 @@ h2 {
     left: 25%;
     right: 25%;
     background: var(--white);
-}
+} */
 #header .hamburger {
     height: 50px;
     width: 50px;
@@ -196,7 +232,6 @@ h2 {
     margin-top: 3rem;
 }
 .vr-card p {
-    font-family: 'Alata', sans-serif;
     text-align: center;
     font-size: 1rem;
     color: var(--very-dark-dray);
@@ -230,11 +265,17 @@ h2 {
     bottom: 4px;
     right: 0;
     opacity: .4;
-    z-index: -100;
-    cursor: pointer;
+    cursor: pointer;  
 }
-.card:hover:hover {
-    opacity: .4;
+.card:hover::before {
+    background-image: unset;
+    background-color: white;
+    opacity: 0.6;
+    /* transition: 0.5s cubic-bezier(0.12, 0, 0.39, 0); */
+    transition: 0.4s cubic-bezier(0.2, 1, 0.89, 1);
+}
+.card:hover h3 {
+    color: var(--black);
 }
 .card h3 {
     position: absolute;
@@ -242,8 +283,56 @@ h2 {
     top: 32%;
     width: 40%;
     margin-left: 1rem;
-    text-align: left;
     color: var(--white);
     font-size: 1.5rem;
-    z-index: 100;
 }
+.btn {
+    padding: .6rem 3rem;
+    background-color: transparent;
+    border: 2px solid var(--very-dark-dray);
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    color: var(--black);
+    font-size: 1.2rem;
+    letter-spacing: .3rem;
+    /* transition: .6s cubic-bezier(0.12, 0, 0.39, 0); */
+	transition: 0.5s cubic-bezier(0.37, 0, 0.63, 1);
+}
+.btn:hover {
+    background-color: var(--black);
+    color: var(--white);
+    border: 2px solid var(--black);
+}
+/* end main section */
+
+/* footer section */
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--black);
+    margin-top: 4rem;
+    padding: 2rem;
+}
+.useful-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+.useful-links a {
+    text-transform: capitalize;
+}
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+.copyright {
+    color: var(--white);
+}
+/* end footer section */
