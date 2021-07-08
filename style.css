@@ -28,7 +28,7 @@ body {
     -webkit-font-smoothing: antialiased;
     height: 100vh;
     text-rendering: optimizeSpeed;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -103,23 +103,20 @@ p, .btn {
     z-index: 1000;
 }
 .logo img {
-    transform: scale(.7);
+    width: 9.375rem;
 }
 #header .header {
-    /* min-height: 8vh; */
     background-color: none;
     transition: .3s ease background-color;
 }
 #header .nav-bar {
     display: flex;
     align-items: center;
-    justify-content: center;
     justify-content: space-between;
-    margin-left: -.8rem;
     width: 100%;
     height: 100%;
-    max-width: 1300px;
-    padding: 1rem .8rem;
+    max-width: 1420px;
+    padding: 1rem 2rem;
 }
 #header .nav-list .nav-item {
     position: absolute;
@@ -208,15 +205,15 @@ p, .btn {
 }
 .heading-text {
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     top: 30%;
-    padding: 2rem;
+    right: 0rem;
+    left: -2.2rem;
+    width: min-content;
+    padding: 4rem;
 }
 .heading-text h1 {
     border: 2px solid white;
-    padding: 1rem;
+    padding: 1.5rem;
     font-size: 2.4rem;
     color: var(--white);
 }
@@ -224,10 +221,6 @@ p, .btn {
 
 /* leader section */
 .vr-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     padding: 2rem 1.5rem;
     margin-top: 3rem;
 }
@@ -246,7 +239,7 @@ p, .btn {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 1.5rem;
+    /* padding: 0 1.5rem; */
 }
 .gallery-all {
     margin-top: 3rem;
@@ -258,6 +251,7 @@ p, .btn {
 .card::before {
     position: absolute;
     content: "";
+    /* TODO add hero img effect */
     background-image: linear-gradient(to left, #00000000, #01010100, #030302, #040404, #050505);
     opacity: .1;
     left: 0;
@@ -272,7 +266,7 @@ p, .btn {
     background-color: white;
     opacity: 0.6;
     /* transition: 0.5s cubic-bezier(0.12, 0, 0.39, 0); */
-    transition: 0.4s cubic-bezier(0.2, 1, 0.89, 1);
+    transition: 0.5s cubic-bezier(0.2, 1, 0.89, 1);
 }
 .card:hover h3 {
     color: var(--black);
@@ -297,6 +291,9 @@ p, .btn {
     letter-spacing: .3rem;
     /* transition: .6s cubic-bezier(0.12, 0, 0.39, 0); */
 	transition: 0.5s cubic-bezier(0.37, 0, 0.63, 1);
+}
+.top-content .btn {
+    display: none;
 }
 .btn:hover {
     background-color: var(--black);
@@ -335,4 +332,137 @@ p, .btn {
 .copyright {
     color: var(--white);
 }
+ .attribution {
+     font-size: 11px;
+     text-align: center;
+     background-color: var(--black);
+     color: var(--dark-gray);
+ }
+ .attribution a {
+     color: var(--white);
+ }
 /* end footer section */
+
+/* media query */
+@media only  screen and (min-width: 1020px) {
+    #header {
+    background-image: url(./img/desktop/image-hero.jpg);
+    }
+    #header .hamburger {
+        display: none;
+    } 
+    #header .nav-bar {
+    padding: 1rem 6rem;
+    }
+    #header .nav-list .nav-item {
+    position: initial;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    gap: 2.5rem;
+    background-color: transparent;
+    }
+    .effect {
+    font-family: 'Alata', sans-serif;
+    text-transform: capitalize;
+    }
+    .heading-text {
+    top: 25%;
+    bottom: 0;
+    right: 0;
+    left: 2rem;
+    width: 750px;
+    padding: 4rem;
+    }
+    .heading-text h1 {
+        border: 2px solid white;
+        padding: 1.5rem;
+        font-size: 4.5rem;
+        color: var(--white);
+    }
+    .main-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 2rem;
+    }
+    .vr-card {
+        max-width: 70rem;
+        /* max-width: 90%; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .vr-card picture img {
+        flex: 1;
+    }
+    .leader-desc {
+        display: flex;
+        flex-direction: column;
+         flex: 1;
+        margin-top: 7rem;
+        margin-left: -9rem;
+        margin-bottom: -8rem;
+        background-color: var(--white);
+        padding: 4.2rem 4rem;   
+        gap: 1rem;    
+    }
+    .leader-desc h2 {
+        text-align: left;
+    }
+    .leader-desc p {
+        text-align: left;
+        padding: 0;
+    }
+    .gallery-container {
+        max-width: 72rem;
+        /* max-width: 90%; */
+    }
+    .btn {
+        display: none;
+    }
+    .top-content .btn {
+        display: flex;
+    }
+    .top-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 5rem;
+    }
+    .gallery {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;  
+    }
+    .card h3 {
+        position: absolute;
+        content: '';
+        top: 77%;
+        width: 50%;
+        margin-left: 2.5rem;
+        color: var(--white);
+        font-size: 1.5rem;
+    }
+    .footer-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 3rem 4rem;
+    }
+    .footer-container .left ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 2rem;        
+    }
+    .footer-container .right .social-icons {
+        justify-content: right;
+    }
+}
+/* end  media query */
