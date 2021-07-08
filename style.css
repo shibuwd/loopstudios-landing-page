@@ -239,7 +239,7 @@ p, .btn {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* padding: 0 1.5rem; */
+    padding: 0 1.5rem;
 }
 .gallery-all {
     margin-top: 3rem;
