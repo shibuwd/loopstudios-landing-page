@@ -50,7 +50,6 @@ h2 {
     text-align: center;
     font-size: 2rem;
     color: var(--black);
-    margin-top: 2rem;
 }
 p, .btn {
     font-family: 'Alata', sans-serif;
@@ -136,25 +135,6 @@ p, .btn {
 #header .nav-list ul.active {
     left: 0%;
 }
-/* #header .nav-list ul a {
-    position: relative;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    color: var(--white);
-    margin: 1rem;
-    display: inline-block;
-    transition: 0.6s cubic-bezier(0.37, 0, 0.63, 1);
-} */
-/* .effect:hover:before {
-    position: absolute;
-    content: '';
-    height: .1rem;
-    width: 50%;
-    top: 120%;
-    left: 25%;
-    right: 25%;
-    background: var(--white);
-} */
 #header .hamburger {
     height: 50px;
     width: 50px;
@@ -231,6 +211,9 @@ p, .btn {
     line-height: 1.5;
     padding: 1.2rem 1rem;
 }
+.leader-desc {
+    margin-top: 2.5rem;
+}
 /* end vr section */
 
 /* gallery section */
@@ -244,6 +227,9 @@ p, .btn {
 .gallery-all {
     margin-top: 3rem;
 }
+.top-content h2 {
+    margin-bottom: 2.3rem;
+}
 .card {
     position: relative;
     margin-bottom: 1rem; 
@@ -251,7 +237,6 @@ p, .btn {
 .card::before {
     position: absolute;
     content: "";
-    /* TODO add hero img effect */
     background-image: linear-gradient(to left, #00000000, #01010100, #030302, #040404, #050505);
     opacity: .1;
     left: 0;
@@ -423,14 +408,19 @@ p, .btn {
     .btn {
         display: none;
     }
-    .top-content .btn {
-        display: flex;
-    }
     .top-content {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 5rem;
+    }
+       .top-content .btn {
+           display: flex;
+           margin-top: -1.8rem;
+       }
+    .card::before {
+         background-image: linear-gradient(to bottom, #03030200, #12121000, #00000096, #000000, #000000);
+        opacity: .6;
     }
     .gallery {
         display: flex;
