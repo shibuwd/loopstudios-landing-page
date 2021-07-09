@@ -57,7 +57,7 @@ p, .btn {
 
 .effect {
     position: relative;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     color: var(--white);
     margin-bottom: 1.4rem;
@@ -114,7 +114,7 @@ p, .btn {
     justify-content: space-between;
     width: 100%;
     height: 100%;
-    max-width: 1420px;
+    /* max-width: 1420px; */
     padding: 1rem 2rem;
 }
 #header .nav-list .nav-item {
@@ -125,12 +125,12 @@ p, .btn {
     left: 100%;
     top: -5%;
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column; 
     z-index: 1;
-    transition: .5s ease left;
-    margin-top: 2rem;
+    transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1) left;
+    padding-left: 2.1rem;
+    
 }
 #header .nav-list ul.active {
     left: 0%;
@@ -196,6 +196,7 @@ p, .btn {
     padding: 1.5rem;
     font-size: 2.4rem;
     color: var(--white);
+    cursor: default;
 }
 /*end header section */
 
@@ -210,9 +211,13 @@ p, .btn {
     color: var(--very-dark-dray);
     line-height: 1.5;
     padding: 1.2rem 1rem;
+    cursor: default;
 }
 .leader-desc {
     margin-top: 2.5rem;
+}
+.leader-desc h2 {
+    cursor: default;
 }
 /* end vr section */
 
@@ -229,6 +234,7 @@ p, .btn {
 }
 .top-content h2 {
     margin-bottom: 2.3rem;
+    cursor: default;
 }
 .card {
     position: relative;
@@ -248,9 +254,8 @@ p, .btn {
 }
 .card:hover::before {
     background-image: unset;
-    background-color: white;
+    background-color: var(--white);
     opacity: 0.6;
-    /* transition: 0.5s cubic-bezier(0.12, 0, 0.39, 0); */
     transition: 0.5s cubic-bezier(0.2, 1, 0.89, 1);
 }
 .card:hover h3 {
@@ -274,7 +279,6 @@ p, .btn {
     color: var(--black);
     font-size: 1.2rem;
     letter-spacing: .3rem;
-    /* transition: .6s cubic-bezier(0.12, 0, 0.39, 0); */
 	transition: 0.5s cubic-bezier(0.37, 0, 0.63, 1);
 }
 .top-content .btn {
@@ -329,6 +333,14 @@ p, .btn {
 /* end footer section */
 
 /* media query */
+@media only screen and (min-width: 768px) {
+    .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-rows: auto auto;
+    column-gap: 1.3rem;
+    }
+    
 @media only  screen and (min-width: 1020px) {
     #header {
     background-image: url(./img/desktop/image-hero.jpg);
@@ -361,98 +373,97 @@ p, .btn {
     padding: 4rem;
     }
     .heading-text h1 {
-        border: 2px solid white;
-        padding: 1.5rem;
-        font-size: 4.5rem;
-        color: var(--white);
+    border: 2px solid white;
+    padding: 1.5rem;
+    font-size: 4.5rem;
+    color: var(--white);
     }
     .main-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     flex-direction: column;
+    padding: 2rem;
     }
     .vr-card {
-        max-width: 70rem;
-        /* max-width: 90%; */
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    max-width: 70rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     }
     .vr-card picture img {
         flex: 1;
     }
     .leader-desc {
-        display: flex;
-        flex-direction: column;
-         flex: 1;
-        margin-top: 7rem;
-        margin-left: -9rem;
-        margin-bottom: -8rem;
-        background-color: var(--white);
-        padding: 4.2rem 4rem;   
-        gap: 1rem;    
+    display: flex;
+    flex-direction: column;
+     flex: 1;
+    margin-top: 7rem;
+    margin-left: -9rem;
+    margin-bottom: -8rem;
+    background-color: var(--white);
+    padding: 4.2rem 4rem;   
+    gap: 1rem;    
     }
     .leader-desc h2 {
         text-align: left;
     }
     .leader-desc p {
-        text-align: left;
-        padding: 0;
+    text-align: left;
+    padding: 0;
     }
     .gallery-container {
-        max-width: 72rem;
-        /* max-width: 90%; */
+    max-width: 72rem;
     }
     .btn {
-        display: none;
+    display: none;
     }
     .top-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5rem;
     }
-       .top-content .btn {
-           display: flex;
-           margin-top: -1.8rem;
-       }
+    .top-content .btn {
+    display: flex;
+    margin-top: -1.8rem;
+    }
     .card::before {
-         background-image: linear-gradient(to bottom, #03030200, #12121000, #00000096, #000000, #000000);
-        opacity: .6;
+    background-image: linear-gradient(to bottom, #03030200, #12121000, #00000096, #000000, #000000);
+    opacity: .6;
     }
     .gallery {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;  
     }
     .card h3 {
-        position: absolute;
-        content: '';
-        top: 77%;
-        width: 50%;
-        margin-left: 2.5rem;
-        color: var(--white);
-        font-size: 1.5rem;
+    position: absolute;
+    content: '';
+    top: 77%;
+    width: 50%;
+    margin-left: 2.5rem;
+    color: var(--white);
+    font-size: 1.5rem;
     }
     .footer-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: row;
-        padding: 3rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 3rem 4rem;
     }
     .footer-container .left ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        gap: 2rem;        
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2rem;        
     }
     .footer-container .right .social-icons {
-        justify-content: right;
+    justify-content: right;
     }
+}
 }
 /* end  media query */
