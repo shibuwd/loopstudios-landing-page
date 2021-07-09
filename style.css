@@ -116,6 +116,7 @@ p, .btn {
     height: 100%;
     /* max-width: 1420px; */
     padding: 1rem 2rem;
+    overflow: hidden;
 }
 #header .nav-list .nav-item {
     position: absolute;
@@ -130,7 +131,7 @@ p, .btn {
     z-index: 1;
     transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1) left;
     padding-left: 2.1rem;
-    
+    overflow: hidden;
 }
 #header .nav-list ul.active {
     left: 0%;
